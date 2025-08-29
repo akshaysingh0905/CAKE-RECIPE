@@ -1,0 +1,175 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fdf6f0;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    color: #3c2f2f;
+}
+
+.recipe-card {
+    background: #fff8f0;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 600px;
+    padding: 2rem;
+    width: 100%;
+}
+
+.recipe-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #8b3e2f;
+}
+
+.recipe-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(139,62,47,0.3);
+    transition: transform 0.3s ease;
+}
+
+.recipe-image:hover {
+    transform: scale(1.05);
+}
+
+.prep-info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #a64b3c;
+}
+
+.toggle-btn {
+    background-color: #a64b3c;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+}
+
+.toggle-btn:hover {
+    background-color: #8b3e2f;
+}
+
+.ingredients,
+.steps {
+    list-style-position: inside;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.ingredients li:hover,
+.steps li:hover {
+    color: #a64b3c;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.cooking-controls {
+    text-align: center;
+}
+
+.action-btn {
+    background-color: #8b3e2f;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    margin: 0 0.5rem 1rem 0.5rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.action-btn:hover:not(:disabled) {
+    background-color: #a64b3c;
+}
+
+.steps li.active {
+    background-color: #f3c6b7;
+    border-left: 6px solid #a64b3c;
+    padding-left: 0.7rem;
+    animation: highlightStep 1s ease forwards;
+}
+
+@keyframes highlightStep {
+    from {
+        background-color: #fdf6f0;
+    }
+    to {
+        background-color: #f3c6b7;
+    }
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    height: 18px;
+    overflow: hidden;
+    margin: 1rem 0;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #a64b3c, #f3c6b7);
+    transition: width 0.5s ease;
+}
+
+.timer {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #8b3e2f;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+    .recipe-card {
+        padding: 1rem;
+    }
+    .recipe-title {
+        font-size: 2rem;
+    }
+    .toggle-btn,
+    .action-btn {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+    .prep-info {
+        font-size: 1rem;
+    }
+}
